@@ -15,7 +15,7 @@ const NotFoundWrapper = styled.div`
   align-items: center;
 `;
 
-const NotFoundPage = props => {
+export const NotFoundPage = props => {
   return (
     <NotFoundWrapper>
       <Helmet>

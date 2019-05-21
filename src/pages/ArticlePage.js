@@ -6,7 +6,7 @@ import { Loader, ArticleView } from "../components";
 import { Button, Icon, Alert } from "antd";
 import { Helmet } from "react-helmet";
 
-class ArticlePage extends React.Component {
+export class ArticlePage extends React.Component {
   componentDidMount() {
     if (this.props.allArticles.length === 0) {
       this.props.fetchPopularArticles();

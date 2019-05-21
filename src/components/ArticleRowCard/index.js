@@ -6,7 +6,6 @@ export default ({ article, openArticle }) => {
   const HeaderImage = article.media[0]["media-metadata"].find(
     media => media.format === "Jumbo"
   );
-  console.log(HeaderImage);
   return (
     <React.Fragment>
       <Divider>{article.views}</Divider>

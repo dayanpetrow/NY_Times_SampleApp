@@ -6,7 +6,7 @@ import { ArticleRowCard, Loader } from "../components";
 import { Button } from "antd";
 import { Helmet } from "react-helmet";
 
-class HomePage extends React.Component {
+export class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,6 @@ class HomePage extends React.Component {
   }
 
   loadMoreArticles = () => {
-    console.log("load more");
     this.setState(prevState => {
       return { displayArticlesCount: prevState.displayArticlesCount + 5 };
     });
@@ -35,7 +34,6 @@ class HomePage extends React.Component {
     if (allArticles.length === 0) {
       return <Loader />;
     }
-    console.log(allArticles);
     return (
       <div>
         <Helmet>
