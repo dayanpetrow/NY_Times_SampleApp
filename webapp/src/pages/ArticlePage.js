@@ -4,6 +4,7 @@ import { FETCH_POPULAR_ARTICLES } from '../actions';
 
 class ArticlePage extends React.Component {
     render() {
+        console.log(this.props);
         return (
             <div>{this.props.article.title || 'no title yet'}</div>
         )
@@ -12,7 +13,7 @@ class ArticlePage extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     allArticles: state.allArticles,
-    article: state.allArticles.find(article => article.id === parseInt(ownProps.match.params.id))
+    article: state.allArticles.find(article => article.views === parseInt(ownProps.match.params.views))
 });
 
 const mapDispatchToProps = dispatch => {

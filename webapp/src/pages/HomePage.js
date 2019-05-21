@@ -15,7 +15,7 @@ class HomePage extends React.Component {
                         <div>
                             <button 
                                 key={article.id}
-                                onClick={() => this.props.history.push(`/article/${article.id}`)}>
+                                onClick={() => this.props.history.push(`/article/${article.views}`)}>
                                 {article.title}    
                             </button>
                         </div>

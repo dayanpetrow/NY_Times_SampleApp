@@ -31,7 +31,7 @@ class App extends Component {
         <Router>
           <div className="App">
             <Route exact path="/" component={HomePage} />
-            <Route path="/article/:id" component={ArticlePage} />
+            <Route path="/article/:views" component={ArticlePage} />
           </div>
         </Router>
       </Provider>
