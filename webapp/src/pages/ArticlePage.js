@@ -4,6 +4,7 @@ import { FETCH_POPULAR_ARTICLES } from "../actions";
 import PropTypes from "prop-types";
 import { Loader, ArticleView } from "../components";
 import { Button, Icon, Alert } from "antd";
+import { Helmet } from "react-helmet";
 
 class ArticlePage extends React.Component {
   componentDidMount() {
@@ -34,6 +35,9 @@ class ArticlePage extends React.Component {
     if (articlesLength > 0 && !article) {
       return (
         <div className="ContainerWithPadding">
+          <Helmet>
+            <title>The article could not be found!</title>
+          </Helmet>
           <Alert
             message="Error"
             description="The article could not be found!"
@@ -42,12 +46,12 @@ class ArticlePage extends React.Component {
           />
           <div className="ContainerWithPadding">
             <Button
-                target="_blank"
-                type="primary"
-                block={true}
-                onClick={() => history.push("/")}
+              target="_blank"
+              type="primary"
+              block={true}
+              onClick={() => history.push("/")}
             >
-                See all articles
+              See all articles
             </Button>
           </div>
         </div>
@@ -56,6 +60,9 @@ class ArticlePage extends React.Component {
 
     return (
       <div>
+        <Helmet>
+          <title>{article.title}</title>
+        </Helmet>
         <div className="NextPrevArticle">
           <Button.Group>
             <Button

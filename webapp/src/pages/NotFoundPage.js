@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import { Button } from "antd";
+import { Helmet } from "react-helmet";
 
 const NotFoundWrapper = styled.div`
   min-height: 200px;
@@ -17,7 +18,10 @@ const NotFoundWrapper = styled.div`
 const NotFoundPage = props => {
   return (
     <NotFoundWrapper>
-      <h1>Page not found</h1>
+      <Helmet>
+        <title>Page could not be found!</title>
+      </Helmet>
+      <h1>404 Not Found</h1>
       <Button onClick={() => props.history.push("/")} type="primary">
         See all articles
       </Button>
