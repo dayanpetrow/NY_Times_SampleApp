@@ -30,3 +30,7 @@ code {
   text-align: center;
   padding-bottom: 10px;
 }
+
+.ContainerWithPadding {
+  padding: 20px;
+}
