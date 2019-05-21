@@ -3,7 +3,7 @@ import * as actions from '../actions';
 import axios from 'axios';
 
 const KEY = "YpxFBa9x1ToHLouwC1ZukvSdrq85szAU";
-const FETCH_ARTICLES_URL = `http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=${KEY}`
+const FETCH_ARTICLES_URL = `https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=${KEY}`
 
 
 /**
