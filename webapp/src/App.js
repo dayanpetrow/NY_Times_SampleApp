@@ -4,10 +4,13 @@ import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import rootReducer from "./reducers";
 import rootSaga from "./sagas";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import HomePage from './pages/HomePage';
-import ArticlePage from './pages/ArticlePage';
+import HomePage from "./pages/HomePage";
+import ArticlePage from "./pages/ArticlePage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+import { Header, Footer } from "./components";
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -17,7 +20,7 @@ const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(sagaMiddleware),
-    //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
@@ -29,10 +32,15 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
+          <Header />
           <div className="App">
-            <Route exact path="/" component={HomePage} />
-            <Route path="/article/:views" component={ArticlePage} />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/article/:views" component={ArticlePage} />
+              <Route path="*" component={NotFoundPage} />
+            </Switch>
           </div>
+          <Footer />
         </Router>
       </Provider>
     );

@@ -1,29 +1,68 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { FETCH_POPULAR_ARTICLES } from '../actions';
+import { ArticleRowCard, Loader } from '../components'
+import { Button } from 'antd';
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            displayArticlesCount: 5
+        }
+    }
+
     componentDidMount() {
         this.props.fetchPopularArticles();
     }
 
+    loadMoreArticles = () => {
+        console.log('load more');
+        this.setState((prevState) => {
+            return { displayArticlesCount: prevState.displayArticlesCount + 5 };
+        });
+    }
+
+    openArticle = (id) => {
+        this.props.history.push(`/article/${id}`);
+    }
+
     render() {
+        const { displayArticlesCount } = this.state;
+        const { allArticles } = this.props;
+        if (allArticles.length === 0) {
+            return (<Loader />);
+        }
+        console.log(allArticles);
         return (
             <div>
-                {
-                    this.props.allArticles.map(article => (
-                        <div>
-                            <button 
-                                key={article.id}
-                                onClick={() => this.props.history.push(`/article/${article.views}`)}>
-                                {article.title}    
-                            </button>
-                        </div>
-                    ))
-                }
+                <div className="ArticleList">
+                    {allArticles.slice(0, displayArticlesCount).map(article => (
+                        <ArticleRowCard key={article.views} article={article} openArticle={this.openArticle} />
+                    ))}
+                </div>
+                <div className="LoadMore">
+                <Button 
+                    onClick={() => this.loadMoreArticles()}
+                    disabled={allArticles.length === displayArticlesCount}
+                    size="large"
+                    type="primary"
+                    icon="plus-circle"
+                >Load more</Button>
+                </div>
+                
             </div>
         )
     }
+}
+
+HomePage.defaultProps = {
+    allArticles: [],
+}
+
+HomePage.propTypes = {
+    allArticles: PropTypes.array.isRequired
 }
 
 const mapDispatchToProps = dispatch => {
