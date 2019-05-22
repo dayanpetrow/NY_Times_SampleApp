@@ -46,3 +46,8 @@ yarn coverage
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Screenshots
+![image](https://user-images.githubusercontent.com/26420002/58155674-0188a780-7c7d-11e9-9e4c-44fcc3f2afd9.png)
+
+![image](https://user-images.githubusercontent.com/26420002/58155777-46acd980-7c7d-11e9-8441-9ed30c07c935.png)

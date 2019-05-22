@@ -25,7 +25,7 @@ function* watchFetchPopularArticles() {
     );
 }
 
-function* workerFetchPopularArticles(action) {
+function* workerFetchPopularArticles() {
     try {
         const response = yield call(fetchPopularArticles);
         yield put({ 
