@@ -44,6 +44,8 @@ yarn coverage
 (or npm run coverage)
 ```
 
+![image](https://user-images.githubusercontent.com/26420002/58156521-edde4080-7c7e-11e9-9cea-0a3ef58c195c.png)
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
