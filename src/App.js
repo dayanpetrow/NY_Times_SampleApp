@@ -27,7 +27,7 @@ const store = createStore(
 // run the saga middleware
 sagaMiddleware.run(rootSaga);
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <Provider store={store}>

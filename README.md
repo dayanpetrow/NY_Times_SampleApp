@@ -34,12 +34,14 @@ yarn start
 Run tests
 
 ```bash
-npm run test
+yarn test
+(or npm run test)
 ```
 
 Run tests with coverage
 ```bash
-npm run coverage
+yarn coverage
+(or npm run coverage)
 ```
 
 ## License

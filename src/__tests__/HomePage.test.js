@@ -22,7 +22,6 @@ describe('Home Page', () => {
 
     it('should call fetchPopularArticles on render', () => {
         const wrapper = enzyme.mount(<HomePage {...props} />);
-        wrapper.instance().forceUpdate();
         expect(props.fetchPopularArticles).toHaveBeenCalled();
     })
 
