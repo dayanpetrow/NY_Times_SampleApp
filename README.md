@@ -23,6 +23,13 @@ yarn
 (or npm install)
 ```
 
+Change API key (recommended)
+```bash
+src/sagas/index.js (line 5)
+const KEY = "<YOUR-KEY>";
+const FETCH_ARTICLES_URL = `https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=${KEY}`
+```
+
 Run project
 ```bash
 yarn start 
