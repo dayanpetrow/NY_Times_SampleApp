@@ -70,7 +70,7 @@ export class ArticlePage extends React.Component {
               onClick={() => this.previousArticle()}
               disabled={currentParam - 1 < 1}
             >
-              <Icon type="left" /> Previous article
+              <Icon type="left" /> Previous
             </Button>
             <Button type="primary" onClick={() => history.push("/")}>
               Back to list
@@ -80,7 +80,7 @@ export class ArticlePage extends React.Component {
               onClick={() => this.nextArticle()}
               disabled={currentParam + 1 > articlesLength}
             >
-              Next article <Icon type="right" />
+              Next <Icon type="right" />
             </Button>
           </Button.Group>
         </div>
